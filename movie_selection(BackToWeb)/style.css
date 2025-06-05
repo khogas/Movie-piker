@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fff9c4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffeb3b;
+    padding: 30px;
+    border: 3px solid #000;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #000;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #000;
+    color: #ffeb3b;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+#customAlert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffeb3b;
+    padding: 30px;
+    border: 3px solid #000;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+#alertMessage {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#alertOK {
+    background-color: #000;
+    color: #ffeb3b;
+}
+
+.logo-container {
+  margin: 0 auto 20px;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  background-color: #ffeb3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.genre-selector-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.genre-selector {
+  position: relative;
+  width: 300px;
+  font-family: Arial, sans-serif;
+  flex-shrink: 0;
+}
+
+.select-box {
+  background: #ffffff;
+  color: #000;
+  border: 2px solid #000000;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-box:hover {
+  background: #f0f0f0;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.options-container {
+  display: none;
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border: 2px solid #000;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.genre-selector.active .options-container {
+  display: block;
+}
+
+.genre-selector.active .select-box {
+  border-radius: 4px 4px 0 0;
+}
+
+.genre-selector.active .arrow {
+  transform: rotate(180deg);
+}
+
+.option {
+  padding: 10px 15px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #f0f0f0;
+}
+
+.option input[type="checkbox"] {
+  accent-color: #FFD700;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.selected-count {
+  background: #FFD700;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+.add-genre-section {
+  width: 300px;
+}
+
+.add-genre {
+  display: flex;
+  margin-top: 0;
+}
+
+.add-genre input {
+  flex-grow: 1;
+  padding: 8px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 4px 0 0 4px;
+}
+
+.add-genre button {
+  padding: 8px 12px;
+  background: #000;
+  color: #fff9c4;
+  border: 2px solid #000;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-genre button:hover {
+  background: #222222;
+}
+
+
+/* Picker page styles */
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.genre-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.genre-filter {
+  background: #ffffff;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.genre-filter.selected {
+  background: #000;
+  color: #ffeb3b;
+}
+
+.result-container {
+  margin: 30px 0;
+  padding: 20px;
+  border: 2px dashed #000;
+  border-radius: 10px;
+  display: none;
+}
+
+.result-container h2 {
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.result-container p {
+  font-size: 18px;
+}

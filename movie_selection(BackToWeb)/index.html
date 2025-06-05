@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets\logo-cir.png" type="image/png">
+  <title>Movie Picker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="assets/logo-cir.png" alt="Movie Picker Logo" class="logo">
+    </div>
+    
+    <h1>Welcome to Movie Picker!</h1>
+    <div class="genre-selector-container">
+        <div class="genre-selector">
+            <div class="select-box" onclick="toggleDropdown()">
+                <span class="selected-text">Select genres...</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="options-container">
+                <div class="option">
+                    <input type="checkbox" id="action" value="Action">
+                    <label for="action">Action</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="comedy" value="Comedy">
+                    <label for="comedy">Comedy</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="drama" value="Drama">
+                    <label for="drama">Drama</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="horror" value="Horror">
+                    <label for="horror">Horror</label>
+                </div>
+            </div>
+        </div>
+        <div class="add-genre-section">
+            <div class="add-genre">
+                <input type="text" id="newGenre" placeholder="Add new genre">
+                <button onclick="addGenre()">+ Add</button>
+            </div>
+        </div>
+    </div>
+       
+    <div class="input-group">
+      <label>Movie name:</label>
+      <input id="movieName" placeholder="Type a movie...">
+    </div>
+    <button id="submit">Submit</button>
+    <button id="finish">Finish</button>
+  </div>
+
+  <div id="customAlert">
+    <p id="alertMessage"></p>
+    <button id="alertOK">OK</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
